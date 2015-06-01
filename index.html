@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>NodeJS Controlled LED</title>
+		<script src="http://192.168.0.8:8080/socket.io/socket.io.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<script>
+		
+		// Waiting for page to load
+		$(document).ready(function() {
+			
+			// Connecting to the socket
+			var socket = io.connect("http://192.168.0.8:8080", {secure: true});
+			var switch_on_btn = $("#switch");
+			var state = 0;
+			
+			// Listening for switch
+			switch_on_btn.on('click', function() {
+				
+				switch (state) {
+					case 0:
+						// Sending switch request
+						socket.emit('control', {stat: "turn_on"});
+						state = 1;
+						break;
+					case 1:
+						// Sending switch request
+						socket.emit('control', {stat: "turn_off"});
+						state = 0;
+						break;
+				}
+				
+			});
+			
+		});
+		
+	</script>
+	<body>
+		<h1>Welcome to NodeJS Controlled Light</h1><hr />
+		<p>Control the LED below</p>
+		<input type="submit" value="Turn Light On" id="switch">
+	</body>
+</html>
