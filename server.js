@@ -1,3 +1,13 @@
+///////////////////////////////////////////
+//                                       //
+//    PROJECT NAME: NGRS                 //
+//    WRITTEN BY: CONNOR EDWARDS         //
+//    DESCRIPTION: SIMPLE NODEJS APP     //
+//                 USED TO CONTROL GPIO  //
+//                 ON THE RASPBERRY PI   //
+//                                       //
+///////////////////////////////////////////
+
 // Requiring Dependencies
 var io = require('socket.io').listen(8080).sockets;
 var GPIO = require('onoff').Gpio;
