@@ -1,6 +1,6 @@
 ///////////////////////////////////////////
 //                                       //
-//    PROJECT NAME: NGRS                 //
+//    PROJECT NAME: NSRG                 //
 //    WRITTEN BY: CONNOR EDWARDS         //
 //    DESCRIPTION: SIMPLE NODEJS APP     //
 //                 USED TO CONTROL GPIO  //
